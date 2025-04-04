@@ -16,13 +16,14 @@
 #define P4_INFRA_P4_PDPI_STRING_ENCODINGS_BIT_STRING_H_
 
 #include <bitset>
+#include <cstddef>
+#include <cstdint>
+#include <string>
 #include <vector>
 
+#include "absl/status/status.h"
 #include "absl/status/statusor.h"
 #include "absl/strings/string_view.h"
-#include "p4_pdpi/netaddr/ipv4_address.h"
-#include "p4_pdpi/netaddr/ipv6_address.h"
-#include "p4_pdpi/netaddr/mac_address.h"
 #include "p4_pdpi/string_encodings/hex_string.h"
 
 namespace pdpi {
@@ -72,18 +73,6 @@ class BitString {
   // returns them as a hex string. Returns an error if there are not enough bits
   // left.
   absl::StatusOr<std::string> ConsumeHexString(int num_bits);
-  // Consumes the given number of bits from the front of the bit string, and
-  // returns them as a MAC address. Returns an error if there are not enough
-  // bits left.
-  absl::StatusOr<netaddr::MacAddress> ConsumeMacAddress();
-  // Consumes the given number of bits from the front of the bit string, and
-  // returns them as a IP address. Returns an error if there are not enough bits
-  // left.
-  absl::StatusOr<netaddr::Ipv4Address> ConsumeIpv4Address();
-  // Consumes the given number of bits from the front of the bit string, and
-  // returns them as a IP address. Returns an error if there are not enough bits
-  // left.
-  absl::StatusOr<netaddr::Ipv6Address> ConsumeIpv6Address();
 
   // Consumes the given number of bits and returns them as a std::bitset.
   template <size_t num_bits>

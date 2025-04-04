@@ -237,29 +237,35 @@ absl::StatusOr<NextHeader> GetNextHeader(const Header& header) {
 
 // Parser helper functions.  Assumes that there are enough bits left in data.
 std::string ParseMacAddress(pdpi::BitString& data) {
-  if (auto mac = data.ConsumeMacAddress(); mac.ok()) {
-    return mac->ToString();
+  // Consumes the given number of bits from the front of the bit string, and
+  // returns them as a MAC address.
+  if (auto hex_string = data.ConsumeHexString(48); hex_string.ok()) {
+    return netaddr::MacAddress::OfHexString(*hex_string)->ToString();
   } else {
     LOG(DFATAL) << "Size was already checked, should never fail; "
-                << mac.status();
+                << hex_string.status();
     return "INTERNAL ERROR";
   }
 }
 std::string ParseIpv4Address(pdpi::BitString& data) {
-  if (auto ip = data.ConsumeIpv4Address(); ip.ok()) {
-    return ip->ToString();
+  // Consumes the given number of bits from the front of the bit string, and
+  // returns them as a IP address.
+  if (auto hex_string = data.ConsumeHexString(32); hex_string.ok()) {
+    return netaddr::Ipv4Address::OfHexString(*hex_string)->ToString();
   } else {
     LOG(DFATAL) << "Size was already checked, should never fail; "
-                << ip.status();
+                << hex_string.status();
     return "INTERNAL ERROR";
   }
 }
 std::string ParseIpv6Address(pdpi::BitString& data) {
-  if (auto ip = data.ConsumeIpv6Address(); ip.ok()) {
-    return ip->ToString();
+  // Consumes the given number of bits from the front of the bit string, and
+  // returns them as a IP address.
+  if (auto hex_string = data.ConsumeHexString(128); hex_string.ok()) {
+    return netaddr::Ipv6Address::OfHexString(*hex_string)->ToString();
   } else {
     LOG(DFATAL) << "Size was already checked, should never fail; "
-                << ip.status();
+                << hex_string.status();
     return "INTERNAL ERROR";
   }
 }

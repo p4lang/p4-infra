@@ -15,12 +15,13 @@
 #include "p4_pdpi/string_encodings/bit_string.h"
 
 #include <algorithm>
+#include <string>
 
 #include "absl/status/status.h"
+#include "absl/status/statusor.h"
 #include "absl/strings/escaping.h"
 #include "absl/strings/str_cat.h"
 #include "gutil/status.h"
-#include "p4_pdpi/netaddr/mac_address.h"
 
 namespace pdpi {
 
@@ -54,19 +55,6 @@ absl::StatusOr<std::string> BitString::PeekHexString(int num_bits) {
 absl::StatusOr<std::string> BitString::ConsumeHexString(int num_bits) {
   RETURN_IF_ERROR(Consume(num_bits));
   return ToHexString(start_index_ - num_bits, num_bits);
-}
-
-absl::StatusOr<netaddr::MacAddress> BitString::ConsumeMacAddress() {
-  ASSIGN_OR_RETURN(auto hex_string, ConsumeHexString(48));
-  return netaddr::MacAddress::OfHexString(hex_string);
-}
-absl::StatusOr<netaddr::Ipv4Address> BitString::ConsumeIpv4Address() {
-  ASSIGN_OR_RETURN(auto hex_string, ConsumeHexString(32));
-  return netaddr::Ipv4Address::OfHexString(hex_string);
-}
-absl::StatusOr<netaddr::Ipv6Address> BitString::ConsumeIpv6Address() {
-  ASSIGN_OR_RETURN(auto hex_string, ConsumeHexString(128));
-  return netaddr::Ipv6Address::OfHexString(hex_string);
 }
 
 absl::StatusOr<std::string> BitString::ToByteString() const {
