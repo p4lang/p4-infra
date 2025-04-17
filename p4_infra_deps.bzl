@@ -34,6 +34,8 @@ def p4_infra_deps():
             strip_prefix = "grpc-1.63.0",
             sha256 = "daa1b06a19b5f7e4603e1f8980eeab43cf69b6e89bee3b2547f275fa5af7f480",
             patch_args = ["-p1"],
+            # TODO(b/411119415): This patch will be removed once we switch over to bzlmod and
+            # upgrade the grpc version.
             patches = [
                 "@com_google_gutil//:bazel/patches/grpc-003-fix_go_gazelle_register_toolchain.patch",
             ],
