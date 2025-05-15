@@ -10,6 +10,7 @@ cc_library(
     srcs = ["byte_string.cc"],
     hdrs = ["byte_string.h"],
     deps = [
+        "@com_google_absl//absl/status",
         "@com_google_absl//absl/status:statusor",
         "@com_google_absl//absl/strings",
         "@com_google_gutil//gutil:status",
@@ -90,7 +91,6 @@ cc_library(
     srcs = ["hex_string.cc"],
     hdrs = ["hex_string.h"],
     deps = [
-        ":byte_string",
         ":safe",
         "@com_google_absl//absl/log",
         "@com_google_absl//absl/status",

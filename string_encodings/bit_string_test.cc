@@ -12,14 +12,16 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#include "p4_pdpi/string_encodings/bit_string.h"
+#include "string_encodings/bit_string.h"
+
+#include <bitset>
 
 #include "absl/status/status.h"
 #include "gmock/gmock.h"
 #include "gtest/gtest.h"
 #include "gutil/status_matchers.h"
 
-namespace pdpi {
+namespace string_encodings {
 
 using ::gutil::IsOkAndHolds;
 using ::gutil::StatusIs;
@@ -93,4 +95,4 @@ TEST(ReadableByteStringTest, ConsumeBitsetErrorWhenInputGreaterThanSize) {
                "Only 40 bits left, but attempted to consume 100 bits."));
 }
 
-}  // namespace pdpi
+}  // namespace string_encodings

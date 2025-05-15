@@ -12,15 +12,15 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#ifndef P4_INFRA_P4_PDPI_STRING_ENCODINGS_SAFE_H_
-#define P4_INFRA_P4_PDPI_STRING_ENCODINGS_SAFE_H_
+#ifndef P4_INFRA_STRING_ENCODINGS_SAFE_H_
+#define P4_INFRA_STRING_ENCODINGS_SAFE_H_
 
 #include <cstdint>
 #include <cstring>
 #include <string>
 #include <vector>
 
-namespace pdpi {
+namespace string_encodings {
 
 // Safely constructs `char` from integer. Example: `SafeChar(0xFF)`.
 //
@@ -33,6 +33,6 @@ char SafeChar(uint8_t byte);
 // For example: `SafeString({0xFF, 0x10})`.
 std::string SafeString(std::vector<uint8_t> bytes);
 
-}  // namespace pdpi
+}  // namespace string_encodings
 
-#endif  // P4_INFRA_P4_PDPI_STRING_ENCODINGS_SAFE_H_
+#endif  // P4_INFRA_STRING_ENCODINGS_SAFE_H_

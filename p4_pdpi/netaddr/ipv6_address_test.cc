@@ -25,14 +25,14 @@
 #include "gutil/status.h"
 #include "gutil/status_matchers.h"
 #include "p4_pdpi/netaddr/network_address.h"
-#include "p4_pdpi/string_encodings/safe.h"
+#include "string_encodings/safe.h"
 
 namespace netaddr {
 namespace {
 
 using ::gutil::IsOk;
 using ::gutil::IsOkAndHolds;
-using ::pdpi::SafeChar;
+using ::string_encodings::SafeChar;
 using ::testing::Eq;
 using ::testing::Not;
 using ::testing::Property;
