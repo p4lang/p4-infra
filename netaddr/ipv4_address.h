@@ -12,15 +12,15 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#ifndef P4_INFRA_P4_PDPI_NETADDR_IPV4_ADDRESS_H_
-#define P4_INFRA_P4_PDPI_NETADDR_IPV4_ADDRESS_H_
+#ifndef P4_INFRA_NETADDR_IPV4_ADDRESS_H_
+#define P4_INFRA_NETADDR_IPV4_ADDRESS_H_
 
 #include <cstdint>
 #include <string>
 
 #include "absl/status/statusor.h"
 #include "absl/strings/string_view.h"
-#include "p4_pdpi/netaddr/network_address.h"
+#include "netaddr/network_address.h"
 
 namespace netaddr {
 
@@ -51,4 +51,4 @@ class Ipv4Address : public NetworkAddress<32, Ipv4Address> {
 
 }  // namespace netaddr
 
-#endif  // P4_INFRA_P4_PDPI_NETADDR_IPV4_ADDRESS_H_
+#endif  // P4_INFRA_NETADDR_IPV4_ADDRESS_H_

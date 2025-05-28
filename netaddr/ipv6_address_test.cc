@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#include "p4_pdpi/netaddr/ipv6_address.h"
+#include "netaddr/ipv6_address.h"
 
 #include <cstdint>
 #include <string>
@@ -24,7 +24,6 @@
 #include "gtest/gtest.h"
 #include "gutil/status.h"
 #include "gutil/status_matchers.h"
-#include "p4_pdpi/netaddr/network_address.h"
 #include "string_encodings/safe.h"
 
 namespace netaddr {

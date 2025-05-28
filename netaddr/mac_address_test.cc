@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#include "p4_pdpi/netaddr/mac_address.h"
+#include "netaddr/mac_address.h"
 
 #include <cstdint>
 #include <string>
@@ -23,7 +23,7 @@
 #include "gtest/gtest.h"
 #include "gutil/status.h"
 #include "gutil/status_matchers.h"
-#include "p4_pdpi/netaddr/network_address.h"
+#include "netaddr/network_address.h"
 #include "string_encodings/safe.h"
 
 namespace netaddr {
@@ -36,7 +36,7 @@ using ::testing::Not;
 
 // An MAC address, in 3 different representations.
 struct MacTriple {
-  // Cannonical representation
+  // Canonical representation
   std::string canonical_notation;
   // Other legal human readable strings, e.g. using uppercase.
   std::vector<std::string> alternative_notations;

@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#include "p4_pdpi/netaddr/mac_address.h"
+#include "netaddr/mac_address.h"
 
 #include <bitset>
 #include <cstdint>
@@ -27,8 +27,7 @@
 #include "absl/strings/str_split.h"
 #include "absl/strings/string_view.h"
 #include "gutil/status.h"
-#include "p4_pdpi/netaddr/ipv6_address.h"
-#include "p4_pdpi/netaddr/network_address.h"
+#include "netaddr/ipv6_address.h"
 #include "string_encodings/hex_string.h"
 
 namespace netaddr {

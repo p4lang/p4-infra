@@ -24,9 +24,9 @@
 #include "absl/status/status.h"
 #include "absl/status/statusor.h"
 #include "absl/strings/string_view.h"
-#include "p4_pdpi/netaddr/ipv4_address.h"
-#include "p4_pdpi/netaddr/ipv6_address.h"
-#include "p4_pdpi/netaddr/mac_address.h"
+#include "netaddr/ipv4_address.h"
+#include "netaddr/ipv6_address.h"
+#include "netaddr/mac_address.h"
 #include "string_encodings/hex_string.h"
 
 namespace string_encodings {
