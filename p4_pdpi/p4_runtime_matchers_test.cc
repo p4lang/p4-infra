@@ -19,7 +19,7 @@
 #include "gutil/proto_matchers.h"
 #include "gutil/testing.h"
 #include "p4/v1/p4runtime.pb.h"
-#include "p4_pdpi/packetlib/packetlib.h"
+#include "packetlib/packetlib.h"
 
 namespace pdpi {
 namespace {
