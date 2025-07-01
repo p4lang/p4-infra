@@ -14,5 +14,3 @@ contrast, a program-dependent (or PD) representation uses names and is generally
 more friendly to humans.
 
 This is a work in progress.
-
-This is not an officially supported Google product.
