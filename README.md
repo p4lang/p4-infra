@@ -1,8 +1,9 @@
-![build](https://github.com/pins/pins-infra/workflows/build/badge.svg)
+![build](https://github.com/p4lang/p4-infra/workflows/build/badge.svg)
 
 # P4 Infrastructure
 
-This repository contains infrastructure and libraries that assist in testing P4.
+This P4 Infra repository contains infrastructure and libraries that assist in
+testing P4.
 
 The PDPI library provides a human readable format the intermediate
 representation (IR) of program-dependent (PD) and program-independent (PI) and
